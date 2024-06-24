@@ -1,0 +1,172 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../hotel.js"></script>
+    <link rel="stylesheet" href="../public/styles/book.css">
+  </head>
+  <body class="bg-cover bg-center flex justify-center items-center h-screen">
+    <form
+      action="/submit_booking"
+      method="post"
+      onsubmit="return validateForm()"
+      class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-3 max-w-md w-full"
+    >
+     <!-- Customer Details -->
+<div class="mb-3 flex justify-between">
+  <div class="w-1/3 mr-2">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="FirstName">First Name:</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="First Name" name="FirstName" required="" autocomplete="off"/>
+  </div>
+  <div class="w-1/3 mr-2">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="MiddleName">Middle Name:</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Middle Name" name="MiddleName" required="" autocomplete="off"/>
+  </div>
+  <div class="w-1/3">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="LastName">Last Name:</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Last Name" name="LastName" required="" autocomplete="off"/>
+  </div>
+</div>
+
+<!-- Email and Phone Number -->
+<div class="mb-3 flex justify-between">
+  <div class="w-1/2 mr-2">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="Email">Email:</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" name="Email" required="" autocomplete="off"/>
+  </div>
+  <div class="w-1/2">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="PhoneNo">Phone Number:</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" placeholder="Phone Number" name="PhoneNo" required="" autocomplete="off"/>
+  </div>
+</div>
+      <!-- Repeat the same pattern for other form fields -->
+      <!-- Room Type -->
+      <div class="mb-3 flex items-center">
+        <label
+          class="block text-gray-700 text-sm font-bold mr-2"
+          for="room_type"
+          >Type:</label
+        >
+        <select
+          onchange="calculateTotal()"
+          class="shadow appearance-none border rounded py-2 px-1 text-sm text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="room_type"
+          name="room_type"
+          required=""
+        >
+          <option value="" disabled="" selected="">Select</option>
+          <option value="3000" data-rooms="2">Deluxe Room - $3000/night</option>
+          <option value="5000" data-rooms="4">
+            Family Suite - $5000/night
+          </option>
+        </select>
+        <label
+          class="block text-gray-700 text-sm font-bold ml-2"
+          for="num_rooms"
+          >Rooms:</label
+        >
+        <input
+          onchange="calculateTotal()"
+          class="shadow appearance-none border rounded py-2 px-1 text-sm text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-10 text-center ml-1"
+          type="number"
+          id="num_rooms"
+          name="num_rooms"
+          min="1"
+          value="1"
+        />
+      </div>
+
+      <!-- Check-in and Check-out Dates -->
+      <div class="mb-3 flex justify-between">
+        <div class="w-1/2 pr-2">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="checkin"
+            >Check-in Date:</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="checkin"
+            type="date"
+            name="checkin"
+            required=""
+          />
+        </div>
+        <div class="w-1/2 pl-2">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="checkout"
+            >Check-out Date:</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="checkout"
+            type="date"
+            name="checkout"
+            required=""
+          />
+        </div>
+      </div>
+
+      <!-- Credit Card Number and CVV -->
+      <div class="mb-3 flex justify-between">
+        <div class="w-1/2 pr-2">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="credit_card"
+            >Credit Card Number:</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="credit_card"
+            type="text"
+            name="credit_card"
+            required=""
+            autocomplete="off"
+          />
+        </div>
+        <div class="w-1/2 pl-2">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="cvv"
+            >CVV:</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="cvv"
+            type="text"
+            name="cvv"
+            required=""
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <h3 class="text-lg font-bold text-gray-700 mb-2">Total Payment:</h3>
+      <p id="total_payment" class="text-xl font-bold text-blue-600">$0</p>
+
+      <!-- Terms and Conditions -->
+      <div class="mb-3">
+        <input
+          type="checkbox"
+          class="mr-2 leading-tight"
+          id="terms"
+          name="terms"
+          required=""
+        />
+        <label class="text-gray-700 text-sm font-bold" for="terms"
+          >I agree to the terms and conditions of the hotel.</label
+        >
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex items-center justify-center">
+        <button 
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Submit Booking
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
