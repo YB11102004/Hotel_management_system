@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/menu.css">
+</head>
+<body>
+  <div class="container-fluid">
+  <h1>Menu Card <sub>Famous for food</sub></h1>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-md-3 category" style>
+      <h2 style="font-family: 'Herr Von Muellerhoff', cursive; font-weight: bolder;">Starters</h2>
+      <div class="menu-item">
+        <img src="/image/Punjabi samosa.jpg" alt="Starter 1">
+        <h3 id="Samosa">Samosa .......... 30 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <h3 id="Pani-Puri">Pani-Puri .......................... 20 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="/image/Paneer pakora.jpg" alt="Starter 3">
+        <h3 id="Paneer-Pakora">Paneer-Pakora ............... 40 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <h3 id="Vadapav">Vadapav .......................... 50 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 category">
+      <h2 style="font-family: 'Herr Von Muellerhoff', cursive; font-weight: bolder;">Main Course</h2>
+      <div class="menu-item">
+        <h3 id="Chole">Chole bhatture ............ 100 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <h3 id="Dal">Dal Makhani ........... 120 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="/image/laccha paratha.jpg" alt="Main Course 3">
+        <h3 id="Lachcha">Lachcha Paratha .......... 110 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="/image/palak.jpg" alt="Main Course 4">
+        <h3 id="Palak">Palak Paneer ......... 120 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 category">
+      <h2 style="font-family: 'Herr Von Muellerhoff', cursive; font-weight: bolder;">Desserts</h2>
+      <div class="menu-item">
+        <h3 id="Rasmalai">Rasmalai ............... 80 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+        <br>
+        <img src="/image/Rasmalai-recipe-2.jpg" alt="Dessert 1">
+      </div>
+      <div class="menu-item">
+        <h3 id="Mango">Mango Pulp ............ 70 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <h3 id="Jalebi">Jalebi ............. 20 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <h3 id="Gulab">Gulab Jamun .................. 40 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 category">
+      <h2 style="font-family: 'Herr Von Muellerhoff', cursive; font-weight: bolder;">Beverages</h2>
+      <div class="menu-item">
+        <h3 id="Butter">Butter milk ............. 30 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <h3 id="Lemon">Lemon Mohito .............. 70 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="/image/mocktail.jpg" alt="Beverage 3">
+        <h3 id="Fruit">Fruit Mocktail ........... 100 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <h3 id="Lassi">Lassi .............................. 40 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="/image/aampanna.jpg" alt="Beverage 3">
+        <h3 id="Aam">Aam panna ........... 100 Rs.</h3>
+        <div class="quantity">
+          <button onclick="decrement(this)">-</button>
+          <input type="text" value="0">
+          <button onclick="increment(this)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <button class="order-button" onclick="orderNow()">Order Now</button>
+</div>
+<script src="/menu.js"></script>
+</body>
+</html>

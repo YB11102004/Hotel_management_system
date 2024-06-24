@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final stage of ordered things</title>
+    <link rel="stylesheet" href="/styles/menu1.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Final stage of ordered things</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div id="nameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact No:</label>
+                <input type="text" id="contact" name="contact" required>
+                <div id="contactError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="grandTotal">Grand Total:</label>
+                <span id="grandTotal"></span>
+            </div>
+            <center>
+            <button type="submit" id="submitBtn" >Submit</button>
+        </center>
+        </form>
+        <div class="back-btn">
+            <a href="/restaurant" style="color: #ECDDCA;">Back to restaurant</a>
+        </div>
+    </div>
+
+    <script src="/menu1.js">
+    </script>
+</body>
+</html>

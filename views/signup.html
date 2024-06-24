@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-signin-client_id" content="964808510606-rpeqkavn67f437divlm3009ltk85n27p.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Responsive Login and Signup Form</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/signup.css">
+            
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                    
+</head>
+<body>
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+                <form id="loginForm">
+                    <div class="field input-field">
+                        <input type="email" id="loginEmail" placeholder="Email" class="input">
+                        <small class="error-msg" id="loginEmailError"></small>
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" id="loginPassword" placeholder="Password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
+                        <small class="error-msg" id="loginPasswordError"></small>
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button type="submit" onclick="validateLoginForm()">Login</button>
+                    </div>
+                </form>
+
+                <div class="form-link">
+                    <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Signup Form -->
+
+        <div class="form signup">
+            <div class="form-content">
+                <header>Signup</header>
+                <form id="signupForm">
+                    <div class="field input-field">
+                        <input type="email" id="signupEmail" placeholder="Email" class="input">
+                        <small class="error-msg" id="signupEmailError"></small>
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" id="signupPassword" placeholder="Create password" class="password">
+                        <small class="error-msg" id="signupPasswordError"></small>
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" id="confirmPassword" placeholder="Confirm password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
+                        <small class="error-msg" id="confirmPasswordError"></small>
+                    </div>
+
+                    <div class="field button-field">
+                        <button type="button" onclick="validateSignupForm()">Signup</button>
+                    </div>
+                </form>
+
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <center>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </center>
+            
+        </div>
+    </section>
+
+        <!-- JavaScript -->
+        <script>
+            
+function validateLoginForm() {
+  // Get form inputs
+  var email = document.getElementById('loginEmail').value.trim();
+  var password = document.getElementById('loginPassword').value.trim();
+  var emailError = document.getElementById('loginEmailError');
+  var passwordError = document.getElementById('loginPasswordError');
+
+  console.log('Password:', password);
+  // Reset error messages
+  emailError.innerHTML = '';
+  passwordError.innerHTML = '';
+
+  // Validate email
+  if (email === '') {
+      emailError.innerHTML = 'Email is required';
+      return;
+  } else if (!isValidEmail(email)) {
+      emailError.innerHTML = 'Enter a valid email address';
+      return;
+  }
+
+  // Validate password
+  if (password === '') {
+      passwordError.innerHTML = 'Password is required';
+      return;
+  } else if (password.length < 6) {
+      passwordError.innerHTML = 'Password must be at least 6 characters long';
+      return;
+  }
+
+  // If all validations pass, submit the form
+  document.getElementById('loginForm').submit();
+}
+
+// Validate signup form
+function validateSignupForm() {
+  // Get form inputs
+  var email = document.getElementById('signupEmail').value.trim();
+  var password = document.getElementById('signupPassword').value.trim();
+  var confirmPassword = document.getElementById('confirmPassword').value.trim();
+  var emailError = document.getElementById('signupEmailError');
+  var passwordError = document.getElementById('signupPasswordError');
+  var confirmPasswordError = document.getElementById('confirmPasswordError');
+
+  // Reset error messages
+  emailError.innerHTML = '';
+  passwordError.innerHTML = '';
+  confirmPasswordError.innerHTML = '';
+
+  // Validate email
+  if (email === '') {
+      emailError.innerHTML = 'Email is required';
+      return;
+  } else if (!isValidEmail(email)) {
+      emailError.innerHTML = 'Enter a valid email address';
+      return;
+  }
+
+  // Validate password
+  if (password === '') {
+      passwordError.innerHTML = 'Password is required';
+      return;
+  } else if (password.length < 6) {
+      passwordError.innerHTML = 'Password must be at least 6 characters long';
+      return;
+  }
+
+  // Validate confirm password
+  if (confirmPassword === '') {
+      confirmPasswordError.innerHTML = 'Confirm Password is required';
+      return;
+  } else if (confirmPassword !== password) {
+      confirmPasswordError.innerHTML = 'Passwords do not match';
+      return;
+  }
+
+  // If all validations pass, submit the form
+  document.getElementById('signupForm').submit();
+}
+
+// Email validation function
+function isValidEmail(email) {
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+        </script>
+        <script src="/signup.js"></script>
+    </body>
+</html>
