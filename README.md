@@ -60,7 +60,7 @@ Find the hotel.ejs file and run that using node.js it'll generate a port address
 - Open a web browser and go to http://yourdomain.com to access the Hotel Management System.
 
 ## 📘 Usage
-###🧳 Customer
+🧳 Customer
 Register/Login: Register a new account or log in with existing credentials.
 Book a Room: Search for available rooms, select preferred options, and complete the booking process.
 Order Food: Browse the ROSA Restaurant menu and place orders.
