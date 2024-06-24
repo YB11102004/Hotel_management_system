@@ -41,6 +41,7 @@ git clone https://github.com/yourusername/hotel-management-system.git
 
 ### 📂 Navigate to the Project Directory:
 cd hotel-management-system
+
 Find the hotel.ejs file and run that using node.js it'll generate a port address go to that local host and run the project.
 
 ### 🗄️ Set Up the Database:
@@ -66,7 +67,7 @@ Order Food: Browse the ROSA Restaurant menu and place orders.
 View Bookings and Orders: Manage current and past bookings and orders from the user dashboard.
 
 ## 💬 Support
-For any issues, questions, or feature requests, please open an issue on the GitHub repository or contact support at support@hotelmanagementsystem.com.
+For any issues, questions, or feature requests, please open an issue on the GitHub repository.
 
 ## 📄 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
