@@ -45,19 +45,19 @@ cd hotel-management-system
 Find the hotel.ejs file and run that using node.js it'll generate a port address go to that local host and run the project.
 
 ### 🗄️ Set Up the Database:
-Open MySQL Workbench.
-Create a new database named hotel_management.
-Import the provided SQL script to set up the necessary tables and data.
+- Open MySQL Workbench.
+- Create a new database named hotel_management.
+- Import the provided SQL script to set up the necessary tables and data.
 
 ### 🔧 Configure Database Connection:
-Open the configuration file (e.g., config.php) and update the database connection settings.
+- Open the configuration file (e.g., config.php) and update the database connection settings.
 
 ### 🚀 Deploy the Website [optional]:
-Move the project files to your web server's root directory.
-Ensure the server is running and navigate to your website in a web browser.
+- Move the project files to your web server's root directory.
+- Ensure the server is running and navigate to your website in a web browser.
 
 ## 🌐 Access the Application:
-Open a web browser and go to http://yourdomain.com to access the Hotel Management System.
+- Open a web browser and go to http://yourdomain.com to access the Hotel Management System.
 
 ## 📘 Usage
 ###🧳 Customer
